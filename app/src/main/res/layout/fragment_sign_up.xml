@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.auth.signUp.SignUpFragment"
+        android:background="@color/backGroundColor">
+
+
+        <TextView
+            android:id="@+id/textFullName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/username"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="100dp"
+            android:layout_marginStart="32dp"
+            android:textSize="21sp"/>
+
+
+        <EditText
+            android:id="@+id/editTextFullName"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textFullName"
+            android:background="@drawable/edit_text_bg"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:hint="@string/fullname"
+            android:padding="8dp"
+            android:textColor="@color/editTextTextColor"
+            android:importantForAutofill="no"
+            android:inputType="text"
+            android:maxLength="80"/>
+
+        <TextView
+            android:id="@+id/textMobileNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/mobile"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/editTextFullName"
+            android:layout_marginTop="18dp"
+            android:layout_marginStart="32dp"
+            android:textSize="21sp"/>
+
+
+        <EditText
+            android:id="@+id/ediTextMobileNumber"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textMobileNumber"
+            android:background="@drawable/edit_text_bg"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:hint="@string/mobile"
+            android:padding="8dp"
+            android:textColor="@color/editTextTextColor"
+            android:importantForAutofill="no"
+            android:inputType="phone"
+            android:maxLength="80"/>
+
+        <TextView
+            android:id="@+id/textUsername"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/username"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ediTextMobileNumber"
+            android:layout_marginTop="18dp"
+            android:layout_marginStart="32dp"
+            android:textSize="21sp"/>
+
+
+        <EditText
+            android:id="@+id/ediTextUsername"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textUsername"
+            android:background="@drawable/edit_text_bg"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:hint="@string/username"
+            android:padding="8dp"
+            android:textColor="@color/editTextTextColor"
+            android:importantForAutofill="no"
+            android:inputType="phone"
+            android:maxLength="80"/>
+
+        <TextView
+            android:id="@+id/textPassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/password"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ediTextUsername"
+            android:layout_marginTop="18dp"
+            android:layout_marginStart="32dp"
+            android:textSize="21sp"/>
+
+
+        <EditText
+            android:id="@+id/editTextPassword"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textPassword"
+            android:background="@drawable/edit_text_bg"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:hint="@string/password"
+            android:padding="8dp"
+            android:textColor="@color/editTextTextColor"
+            android:importantForAutofill="no"
+            android:inputType="textPassword"
+            android:maxLength="80"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

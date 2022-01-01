@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">FanMark</string>
+    <string name="home">Home</string>
+    <string name="add">Add</string>
+    <string name="settings">Settings</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="username">Username</string>
+    <string name="mobile">Mobile Number</string>
+    <string name="password">Password</string>
+    <string name="submit">Submit</string>
+    <string name="click_to_create">Click To Create One!</string>
+    <string name="fullname">FullName</string>
+</resources>

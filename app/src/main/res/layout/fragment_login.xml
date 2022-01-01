@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewmodel"
+            type="com.loe.fanmark.ui.auth.login.AuthViewModel" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.auth.login.LoginFragment"
+        android:background="@color/backGroundColor">
+
+        <TextView
+            android:id="@+id/textUsernameOrMobile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/username"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="180dp"
+            android:layout_marginStart="32dp"
+            android:textSize="21sp"/>
+
+
+        <EditText
+            android:id="@+id/editTextUsernameOrMobile"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textUsernameOrMobile"
+            android:background="@drawable/edit_text_bg"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:hint="@string/username"
+            android:padding="8dp"
+            android:textColor="@color/editTextTextColor"
+            android:importantForAutofill="no"
+            android:inputType="text"
+            android:maxLength="80"/>
+
+        <ImageView
+            android:id="@+id/wrapFiled"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_person"
+            app:layout_constraintEnd_toEndOf="@id/editTextUsernameOrMobile"
+            app:layout_constraintTop_toTopOf="@id/editTextUsernameOrMobile"
+            app:layout_constraintBottom_toBottomOf="@id/editTextUsernameOrMobile"
+            android:layout_marginEnd="10dp"
+            app:tint="@color/black"
+            android:contentDescription="@string/app_name"
+            android:onClick="@{() -> viewmodel.changeStatus()}"/>
+
+        <TextView
+            android:id="@+id/textPassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/password"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/editTextUsernameOrMobile"
+            android:layout_marginTop="32dp"
+            android:layout_marginStart="32dp"
+            android:textSize="21sp"/>
+
+        <EditText
+            android:id="@+id/editTextPassword"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textPassword"
+            android:background="@drawable/edit_text_bg"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:hint="@string/password"
+            android:padding="8dp"
+            android:textColor="@color/editTextTextColor"
+            android:importantForAutofill="no"
+            android:inputType="textPassword"
+            android:maxLength="30"/>
+
+
+        <Button
+            android:id="@+id/submitButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/editTextPassword"
+            app:layout_constraintEnd_toEndOf="@id/editTextPassword"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="@color/black"
+            android:text="@string/submit"/>
+
+
+        <TextView
+            android:id="@+id/textHaveNoAccount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="@id/submitButton"
+            app:layout_constraintBottom_toBottomOf="@id/submitButton"
+            app:layout_constraintStart_toStartOf="@id/editTextPassword"
+            android:text="@string/click_to_create"
+            android:textColor="@color/grayTextColor"
+            android:onClick="@{() -> viewmodel.navigateSignUpFragment()}"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
