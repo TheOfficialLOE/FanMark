@@ -18,7 +18,7 @@
             android:id="@+id/textFullName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/username"
+            android:text="@string/fullname"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             android:layout_marginTop="100dp"
@@ -98,7 +98,7 @@
             android:padding="8dp"
             android:textColor="@color/editTextTextColor"
             android:importantForAutofill="no"
-            android:inputType="phone"
+            android:inputType="text"
             android:maxLength="80"/>
 
         <TextView
@@ -129,6 +129,16 @@
             android:importantForAutofill="no"
             android:inputType="textPassword"
             android:maxLength="80"/>
+
+        <Button
+            android:id="@+id/submitButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/editTextPassword"
+            app:layout_constraintEnd_toEndOf="@id/editTextPassword"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="@color/black"
+            android:text="@string/submit"/>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

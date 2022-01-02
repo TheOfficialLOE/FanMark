@@ -77,7 +77,7 @@ class LoginFragment : Fragment() {
             }
         })
 
-//        Observe on complete
+//        Observe on status
 
         viewModel.status.observe(viewLifecycleOwner, {
             if (it == AuthApiStatus.DONE){
