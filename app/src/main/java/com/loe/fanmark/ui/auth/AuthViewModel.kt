@@ -50,11 +50,10 @@ class AuthViewModel(application: Application): AndroidViewModel(application) {
         get() = _navigateSignUp
 
 
-    private val authRepository = AuthRepository(Service)
+    private val authRepository = AuthRepository(Service, application.applicationContext)
 
 
     fun <T> submitAuthData(action: AuthAction, body: T) = viewModelScope.launch {
-
         _status.value = AuthApiStatus.LOADING
 
         when(action) {
@@ -62,7 +61,8 @@ class AuthViewModel(application: Application): AndroidViewModel(application) {
                 when (val login = authRepository.login(Dispatchers.IO, body as LoginBodyObject)) {
                     is Success -> {
                         _status.value = AuthApiStatus.DONE
-                        Tools.l(login.value.message)
+                        val token = login.value.headers().get("x-auth-token")
+                        authRepository.saveAuthInfo(token!!)
                     }
                     is GenericError -> {
                         _status.value = AuthApiStatus.ERROR
@@ -79,7 +79,8 @@ class AuthViewModel(application: Application): AndroidViewModel(application) {
                 when (val signUp = authRepository.signUp(Dispatchers.IO, body as SignUpObject)) {
                     is Success -> {
                         _status.value = AuthApiStatus.DONE
-                        Tools.l(signUp.value.message)
+                        val token = signUp.value.headers().get("x-auth-token")
+                        authRepository.saveAuthInfo(token!!)
                     }
                     is GenericError -> {
                         _status.value = AuthApiStatus.ERROR

@@ -1,5 +1,6 @@
 package com.loe.fanmark.ui.auth.signUp
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -11,6 +12,7 @@ import com.loe.fanmark.R
 import com.loe.fanmark.databinding.FragmentSignUpBinding
 import com.loe.fanmark.network.AuthTransferObjects
 import com.loe.fanmark.network.AuthTransferObjects.SignUpObject
+import com.loe.fanmark.ui.MainActivity
 import com.loe.fanmark.ui.auth.login.AuthAction
 import com.loe.fanmark.ui.auth.login.AuthApiStatus
 import com.loe.fanmark.ui.auth.login.AuthViewModel
@@ -44,6 +46,8 @@ class SignUpFragment : Fragment() {
             if (it == AuthApiStatus.DONE) {
                 viewModel.displayToast("account successfully created...", MotionToast.TOAST_SUCCESS)
                 viewModel.completeAuth()
+                startActivity(Intent(requireContext() , MainActivity::class.java))
+                activity?.finish()
             }
         })
 
@@ -59,6 +63,7 @@ class SignUpFragment : Fragment() {
 
         binding.submitButton.setOnClickListener {
 
+//            TODO complete validation
 
             val body = SignUpObject(
                 FullName = binding.editTextFullName.text.toString(),

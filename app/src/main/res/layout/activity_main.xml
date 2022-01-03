@@ -32,7 +32,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:backgroundColor="@color/purple_700"
+            app:backgroundColor="@color/editTextTextColor"
             app:menu="@menu/nav_bar_menu"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>

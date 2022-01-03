@@ -1,5 +1,6 @@
 package com.loe.fanmark.ui.auth.login
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -11,6 +12,7 @@ import androidx.navigation.fragment.findNavController
 import com.loe.fanmark.R
 import com.loe.fanmark.databinding.FragmentLoginBinding
 import com.loe.fanmark.network.AuthTransferObjects.LoginBodyObject
+import com.loe.fanmark.ui.MainActivity
 import com.loe.fanmark.util.Tools
 import www.sanju.motiontoast.MotionToast
 
@@ -83,6 +85,8 @@ class LoginFragment : Fragment() {
             if (it == AuthApiStatus.DONE){
                 viewModel.displayToast("successfully logged in...", MotionToast.TOAST_SUCCESS)
                 viewModel.completeAuth()
+                startActivity(Intent(requireContext() , MainActivity::class.java))
+                activity?.finish()
             }
         })
 
